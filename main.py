@@ -25,9 +25,6 @@ class Main(QMainWindow):
         self.home.bt_archivo.clicked.connect(self.ev_archivo)
         self.home.bt_limpiar.clicked.connect(self.ev_limpiar)
 
-        #Desarrollandores
-        self.home.estado.showMessage("Desarrollando por Maryon Torres y Michael Abril")
-
     def ev_lexico(self):
         '''
         Manejo de analisis de expresion lexemas

@@ -3144,7 +3144,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="text">
-        <string>Subir Archivo</string>
+        <string>seleccionar archivo</string>
        </property>
       </widget>
      </item>

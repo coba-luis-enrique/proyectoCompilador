@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_home(object):
     def setupUi(self, home):
         home.setObjectName("home")
-        home.resize(846, 634)
+        home.resize(850, 640)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -149,6 +149,7 @@ class Ui_home(object):
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipText, brush)
         home.setPalette(palette)
+        home.setStyleSheet("background-color: black;")
         home.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         home.setAutoFillBackground(True)
         home.setLocale(QtCore.QLocale(QtCore.QLocale.Spanish, QtCore.QLocale.Panama))
@@ -163,6 +164,7 @@ class Ui_home(object):
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setObjectName("label")
+        self.label.setStyleSheet("background-color: green;")
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.centralWidget)
         self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(20, 310, 811, 231))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
@@ -182,6 +184,7 @@ class Ui_home(object):
         self.label_2.setFont(font)
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
+        self.label_2.setStyleSheet("color: blue;")
         self.lexema.addWidget(self.label_2)
         self.tx_lexico = QtWidgets.QTextEdit(self.horizontalLayoutWidget_2)
         palette = QtGui.QPalette()
@@ -322,6 +325,7 @@ class Ui_home(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipText, brush)
         self.tx_lexico.setPalette(palette)
         self.tx_lexico.setObjectName("tx_lexico")
+        self.tx_lexico.setStyleSheet("background-color: white;")
         self.lexema.addWidget(self.tx_lexico)
         self.analisi.addLayout(self.lexema)
         self.gramatica = QtWidgets.QVBoxLayout()
@@ -337,6 +341,7 @@ class Ui_home(object):
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.gramatica.addWidget(self.label_3)
+        self.label_3.setStyleSheet("color: red;")
         self.tx_sintactico = QtWidgets.QTextEdit(self.horizontalLayoutWidget_2)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
@@ -486,6 +491,7 @@ class Ui_home(object):
         self.fuente.setSpacing(6)
         self.fuente.setObjectName("fuente")
         self.label_5 = QtWidgets.QLabel(self.verticalLayoutWidget_3)
+        self.label_5.setStyleSheet("color: yellow;")
         font = QtGui.QFont()
         font.setFamily("Utopia")
         font.setPointSize(14)
@@ -495,6 +501,7 @@ class Ui_home(object):
         self.label_5.setObjectName("label_5")
         self.fuente.addWidget(self.label_5)
         self.tx_ingreso = QtWidgets.QTextEdit(self.verticalLayoutWidget_3)
+        self.tx_ingreso.setStyleSheet("background-color: white;")
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -937,6 +944,7 @@ class Ui_home(object):
         self.archivo.setSpacing(6)
         self.archivo.setObjectName("archivo")
         self.bt_archivo = QtWidgets.QPushButton(self.horizontalLayoutWidget_3)
+        self.bt_archivo.setStyleSheet("background-color: gray;")
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -1085,6 +1093,7 @@ class Ui_home(object):
         self.bt_limpiar = QtWidgets.QPushButton(self.horizontalLayoutWidget_3)
         self.bt_limpiar.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.bt_limpiar.setText("")
+        self.bt_limpiar.setStyleSheet("background-color: white;")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("delete.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.bt_limpiar.setIcon(icon)
@@ -1093,9 +1102,12 @@ class Ui_home(object):
         self.archivo.addWidget(self.bt_limpiar)
         self.label.raise_()
         self.tx_sintactico.raise_()
+        self.tx_sintactico.setStyleSheet("background-color: white;")
         self.horizontalLayoutWidget_2.raise_()
         self.verticalLayoutWidget_3.raise_()
         self.bt_lexico.raise_()
+        self.bt_lexico.setStyleSheet("background-color: white;")
+        self.bt_sintactico.setStyleSheet("background-color: white;")
         self.horizontalLayoutWidget.raise_()
         self.horizontalLayoutWidget_3.raise_()
         home.setCentralWidget(self.centralWidget)
@@ -1122,24 +1134,24 @@ class Ui_home(object):
     def retranslateUi(self, home):
         _translate = QtCore.QCoreApplication.translate
         home.setWindowTitle(_translate("home", "Analizador lexico y sintactico"))
-        self.label.setText(_translate("home", "Compilador"))
+        self.label.setText(_translate("home", "PROYECTO UNIDAD 4 Y 5"))
         self.label_2.setText(_translate("home", "Analisis Lexico"))
         self.tx_lexico.setHtml(_translate("home", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Sans Serif\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'Sans Serif\';font-size:20pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.tx_lexico.setPlaceholderText(_translate("home", "Analisis de lexemas"))
+        self.tx_lexico.setPlaceholderText(_translate("home", "Analisis Lexico"))
         self.label_3.setText(_translate("home", "Analisis Sintactico"))
-        self.tx_sintactico.setPlaceholderText(_translate("home", "Analisis de gramatica libre de contexto"))
-        self.label_5.setText(_translate("home", "Codigo Fuente"))
+        self.tx_sintactico.setPlaceholderText(_translate("home", "Analisis Sintactico"))
+        self.label_5.setText(_translate("home", "CODIGO TRASCRITO"))
         self.tx_ingreso.setHtml(_translate("home", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.tx_ingreso.setPlaceholderText(_translate("home", "Ingrese el texto analizay o suba un archivo"))
-        self.bt_lexico.setText(_translate("home", "Analizar Lexico"))
-        self.bt_sintactico.setText(_translate("home", "Analisis Sintactico"))
-        self.bt_archivo.setText(_translate("home", "Subir Archivo"))
+        self.tx_ingreso.setPlaceholderText(_translate("home", "Ingrese el texo o añada un archivo"))
+        self.bt_lexico.setText(_translate("home", "EJECUTAR"))
+        self.bt_sintactico.setText(_translate("home", "EJERCUTAR"))
+        self.bt_archivo.setText(_translate("home", "SUBIR"))
 
