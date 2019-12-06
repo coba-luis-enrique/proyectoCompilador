@@ -10,6 +10,7 @@ precedence = (
     ('left', 'SUMA', 'RESTA'),
     ('left', 'MULT', 'DIV'),
     ('right', 'UMINUS'),
+
 )
 nombres = {}
 
@@ -123,7 +124,7 @@ def p_expresion_booleana(t):
 
 
 def p_expresion_numero(t):
-    'expresion : ENTERO'
+    'expresion : NUMERO'
     t[0] = t[1]
 
 def p_expresion_cadena(t):
