@@ -122,7 +122,6 @@ def p_expresion_booleana(t):
         t[0] =  t[2] is not t[4]
 
 
-
 def p_expresion_numero(t):
     'expresion : NUMERO'
     t[0] = t[1]
@@ -139,15 +138,6 @@ def p_expresion_nombre(t):
         print("Nombre desconocido ", t[1])
         t[0] = 0
 
-def p_error(t):
-    global resultado_gramatica
-    if t:
-        resultado = "Error sintactico de tipo {} en el valor {}".format( str(t.type),str(t.value))
-        print(resultado)
-    else:
-        resultado = "Error sintactico {}".format(t)
-        print(resultado)
-    resultado_gramatica.append(resultado)
 
 
 
@@ -180,3 +170,4 @@ if __name__ == '__main__':
         # print("Resultado ", gram)
 
         prueba_sintactica(s)
+

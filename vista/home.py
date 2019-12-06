@@ -149,7 +149,7 @@ class Ui_home(object):
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipText, brush)
         home.setPalette(palette)
-        home.setStyleSheet("background-color: black;")
+        home.setStyleSheet("background-color: white;")
         home.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         home.setAutoFillBackground(True)
         home.setLocale(QtCore.QLocale(QtCore.QLocale.Spanish, QtCore.QLocale.Panama))
