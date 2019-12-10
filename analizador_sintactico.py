@@ -104,9 +104,25 @@ def p_expresion_booleana(t):
     expresion   :   expresion AND expresion 
                 |   expresion OR expresion 
                 |   expresion NOT expresion 
-                |  PARIZQ expresion AND expresion PARDER
-                |  PARIZQ expresion OR expresion PARDER
-                |  PARIZQ expresion NOT expresion PARDER
+                |   PARIZQ expresion AND expresion PARDER
+                |   PARIZQ expresion OR expresion PARDER
+                |   PARIZQ expresion NOT expresion PARDER
+                |   SI PARIZQ expresion MENORQUE expresion PARDER LLAIZQ expresion LLADER
+                |   SI PARIZQ expresion MAYORQUE expresion PARDER LLAIZQ expresion LLADER
+                |   SI PARIZQ expresion IGUAL expresion PARDER LLAIZQ expresion LLADER
+                |   SI PARIZQ expresion DISTINTO expresion PARDER LLAIZQ expresion LLADER
+                |   SI PARIZQ expresion MENORIGUAL expresion PARDER LLAIZQ expresion LLADER
+                |   SI PARIZQ expresion MAYORIGUAL expresion PARDER LLAIZQ expresion 
+                |   SINO LLAIZQ expresion LLADER
+                |   SI PARIZQ expresion MENORQUE expresion PARDER LLAIZQ expresion LLADER SINO LLAIZQ expresion LLADER
+                |   SI PARIZQ expresion MAYORQUE expresion PARDER LLAIZQ expresion LLADER SINO LLAIZQ expresion LLADER
+                |   SI PARIZQ expresion IGUAL expresion PARDER LLAIZQ expresion LLADER SINO LLAIZQ expresion LLADER
+                |   SI PARIZQ expresion DISTINTO expresion PARDER LLAIZQ expresion LLADER SINO LLAIZQ expresion LLADER
+                |   SI PARIZQ expresion MENORIGUAL expresion PARDER LLAIZQ expresion LLADER SINO LLAIZQ expresion LLADER
+                |   SI PARIZQ expresion MAYORIGUAL expresion PARDER LLAIZQ expresion LLADER SINO LLAIZQ expresion LLADER
+
+
+
     '''
     if t[2] == "&&":
         t[0] = t[1] and t[3]
@@ -138,10 +154,16 @@ def p_expresion_nombre(t):
         print("Nombre desconocido ", t[1])
         t[0] = 0
 
+def p_error(t):
+    global resultado_gramatica
+    if t:
+        resultado = "Error sintactico de tipo {} en el valor {}".format( str(t.type),str(t.value))
+        print(resultado)
+    else:
+        resultado = "Error sintactico {}".format(t)
+        print(resultado)
+    resultado_gramatica.append(resultado)
 
-
-
-# instanciamos el analizador sistactico
 parser = yacc.yacc()
 
 def prueba_sintactica(data):
@@ -151,9 +173,11 @@ def prueba_sintactica(data):
     for item in data.splitlines():
         if item:
             gram = parser.parse(item)
+            r= "COMPILACION EXITOSA"
             if gram:
                 resultado_gramatica.append(str(gram))
-        else: print("data vacia")
+        else: resultado_gramatica.append(r)
+        print("COMPILACION EXITOSA")
 
     print("result: ", resultado_gramatica)
     return resultado_gramatica
